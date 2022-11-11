@@ -31,7 +31,7 @@ app.get("/storage/zip", (req,res) => {
 app.get("/storage/emojis/download", async(req,res) => {
   let url = req.query.id
   if(!url) return res.json({status:404, message: "Parameter Invalid"})
-  let d = await axios.get(`https://discordapp.com/api/v9/guilds/1026571370940874942/emojis/${url}`, {headers: { "Authorization": "Bot MTAzNTQ0ODc2NDM4NDY4MTk4NA.GmYj_-.PGUj86VZom09QhJO9e_iFKfTebeMi22q-DUDkw"}})
+  let d = await axios.get(`https://discordapp.com/api/v9/guilds/1026571370940874942/emojis/${url}`, {headers: { "Authorization": "Bot bottokenhere"}})
   if(d.data.animated === true){
      res.set( 'Content-Disposition', `attachment; filename=fricon_${url}.gif` ); request(`https://cdn.discordapp.com/emojis/${url}.gif`).pipe(res); 
 
